@@ -1,4 +1,4 @@
-# oracleSql
+# oracle Sql / PL-SQL
 Ejercicios de certificacion Oracle Sql Database Expert 11g.
 Por: Jesús José Navarrete Baca @ChecheSwap.
 
