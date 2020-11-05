@@ -3,7 +3,7 @@
   -                 SQL Grouping I, Ten Practical Excercises           -
   -                     Oracle RDBMS 12c/19c, HR Scheme                -
   -             Ing. Jesús José Navarrete Baca (@checheswap)           -
-  -                            November 2020                           -
+  -                            April 2020                              -
   -                                                                    -
   ---------------------------------------------------------------------*/
 
