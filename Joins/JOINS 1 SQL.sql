@@ -1,11 +1,11 @@
- /*----------------------------------------------------
-  -                                                   -
-  -        SQL Joins I, Ten Practical Excercises      -
-  --         Oracle RDBMS 12c/19c, HR Scheme          -
-  -     Ing. Jesús José Navarrete Baca (@checheswap)  -
-  -                   04/11/2020                      -
-  -                                                   -
-  -----------------------------------------------------*/
+ /*---------------------------------------------------------------------
+  -                                                                    -
+  -                 SQL Joins I, Ten Practical Excercises              -
+  -                     Oracle RDBMS 12c/19c, HR Scheme                -
+  -             Ing. JesÃºs JosÃ© Navarrete Baca (@checheswap)           -
+  -                            November 2020                           -
+  -                                                                    -
+  ---------------------------------------------------------------------*/
   
 --
 -- Excercise #1.- Obtain for all departments of the company, the name of the department and the name of the head of the department.
