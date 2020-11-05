@@ -1,8 +1,13 @@
---------------------------------
--- *JESUS JOSE NAVARRETE BACA --
--- *EJERCICIOS FUNCIONES      --
---------------------------------
+ /*---------------------------------------------------------------------
+  -                                                                    -
+  -                 SQL Functions I, Ten Practical Excercises          -
+  -                     Oracle RDBMS 12c/19c, HR Scheme                -
+  -             Ing. Jesús José Navarrete Baca (@checheswap)           -
+  -                            July 2020                               -
+  -                                                                    -
+  ---------------------------------------------------------------------*/
 
+--
 --1.- Get the full name(first_name, last_name) and the length in characters of the names of the 
 --    employees (nombre_empleado, no_caracteres) 
 
@@ -10,18 +15,22 @@ SELECT CONCAT(FIRST_NAME || ' ', LAST_NAME) "NOMBRE",
        LENGTH(CONCAT(FIRST_NAME, LAST_NAME)) || ' Caracteres' "LONGITUD" 
 FROM EMPLOYEES;
 
+--
 --2.- Get the first_name ,last_name and email from employees, taking into account that the domain of the 
 --    Company. it's @system.com
 
 SELECT FIRST_NAME "NOMBRE", LAST_NAME "APELLIDO", CONCAT(EMAIL,'@system.com') "EMAIL"
 FROM   EMPLOYEES;
 
+--
 -- 3.- Obtain the full name of the employees (name, surname) and the year of entry to the city.
-
+--
+                     
 SELECT CONCAT(FIRST_NAME || ' ', LAST_NAME) "NOMBRE", 
        EXTRACT(YEAR FROM HIRE_DATE) "YEAR DE INGRESO" 
 FROM EMPLOYEES; 
 
+--
 -- 4.- Obtain the name of the department and the number of employees of the departments, for those
 --     departments that have an even number of employees
 
@@ -33,6 +42,7 @@ GROUP BY   D.DEPARTMENT_NAME
 HAVING     (MOD(COUNT(E.EMPLOYEE_ID),2)=0)
 ORDER BY COUNT(E.EMPLOYEE_ID) DESC;
 
+--                    
 -- 5.- Obtain the first_name, last_name and the date of entry of the employees who entered the period of
 --     1990 to 1994
 
@@ -40,8 +50,9 @@ SELECT FIRST_NAME "NOMBRE", LAST_NAME "APELLIDO", HIRE_DATE "FECHA DE CONTRATACI
 FROM   EMPLOYEES 
 WHERE  (EXTRACT(YEAR FROM HIRE_DATE) BETWEEN 1990 AND 1994);
 
+--                     
 -- 6.- Obtain the name, surname and years of service of the employees of the "SALES" department
-
+--
 SELECT E.FIRST_NAME ||' '|| E.LAST_NAME "NOMBRE", FLOOR(MONTHS_BETWEEN(CURRENT_DATE, E.HIRE_DATE)/12)||' Años' "ANTIGUEDAD", 
        CURRENT_DATE "TODAY", E.HIRE_DATE "CONTRATACION"
 FROM       EMPLOYEES E 
@@ -50,8 +61,9 @@ USING (DEPARTMENT_ID)
 WHERE UPPER(D.DEPARTMENT_NAME) = 'SALES'
 ORDER BY 1 ASC;
 
+--
 --7.- Get the no. of days elapsed this year
-
+--                    
 SELECT TRUNC(CURRENT_DATE,'YYYY') "DESDE", CURRENT_DATE "HASTA" ,
        TRUNC(CURRENT_DATE - TRUNC(CURRENT_DATE,'YYYY')) || ' Dias' "DIAS TRANSCURRIDOS"
 FROM DUAL;
@@ -72,6 +84,7 @@ END "NIVEL DE INGRESO"
 FROM EMPLOYEES 
 ORDER BY SALARY DESC;
 
+--                                  
 --9.- Obtain the first_name, last_name and the date of entry of the employees, the date must be presented in
 --    "DD / MMM / YYYY" format
 
