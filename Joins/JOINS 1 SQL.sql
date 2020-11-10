@@ -231,15 +231,3 @@ JOIN     job_history j
 ON       (d.department_id = j.department_id)
 GROUP BY j.department_id, d.department_name
 ORDER BY 3 DESC;
-
-
-
-
-
-
-
-
-
-
-
-
